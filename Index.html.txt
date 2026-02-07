@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For My Love ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  background: linear-gradient(#fff1f5, #ffffff);
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+h1 {
+  margin-top: 40px;
+  color: #7a1f2b;
+}
+
+select {
+  padding: 12px 20px;
+  font-size: 1em;
+  border-radius: 12px;
+  border: 1px solid #aaa;
+}
+
+.scene {
+  margin-top: 50px;
+  display: none;
+  animation: fadeIn 2s ease;
+}
+
+.choco {
+  width: 220px;
+  height: 140px;
+  margin: auto;
+  border-radius: 25px;
+  position: relative;
+  animation: float 4s ease-in-out infinite;
+}
+
+.milk { background: linear-gradient(145deg,#7b3f00,#c68642); }
+.dark { background: linear-gradient(145deg,#2b1b14,#4b2e1f); }
+.ferrero { background: linear-gradient(145deg,#8b5a2b,#ffd700); }
+.kitkat { background: linear-gradient(145deg,#c62828,#ff8a80); }
+
+.choco::after {
+  content:"🍫";
+  font-size:4em;
+  position:absolute;
+  top:35px;
+  left:75px;
+}
+
+.poem {
+  max-width: 720px;
+  margin: 60px auto;
+  font-size: 1.2em;
+  color: #4a1820;
+  line-height: 1.8;
+}
+
+.final {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.2em;
+  color: #c2185b;
+  margin: 60px 20px;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity:0; }
+  to { opacity:1; }
+}
+</style>
+</head>
+
+<body>
+
+<h1>Pray tell, which chocolate doth thy heart desire? 🍫</h1>
+
+<select id="choice">
+  <option value="">— Choose —</option>
+  <option value="milk">Dairy Milk</option>
+  <option value="ferrero">Ferrero Rocher</option>
+  <option value="kitkat">KitKat</option>
+  <option value="dark">Dark Chocolate</option>
+</select>
+
+<div id="scene" class="scene">
+  <div id="choco" class="choco"></div>
+
+  <div class="poem">
+    <p>
+    My dearest love, whose name my soul hath sworn,<br>
+    As gentle dawn upon the night is born,<br>
+    So came thou soft into my waiting days,<br>
+    And set my silent, wandering heart ablaze.
+    </p>
+
+    <p>
+    No star in heaven burns so fair as thee,<br>
+    Nor time nor fate shall bid my love flee.<br>
+    Accept this gift, though humble it may be,<br>
+    For in its sweetness lies my constancy.
+    </p>
+  </div>
+
+  <div class="final">
+    I love you.<br>
+    Will you be my Valentine for this year<br>
+    and the whole lifetime? ❤️
+  </div>
+</div>
+
+<script>
+const choice = document.getElementById("choice");
+const scene = document.getElementById("scene");
+const choco = document.getElementById("choco");
+
+choice.addEventListener("change", () => {
+  if(choice.value){
+    choco.className = "choco " + choice.value;
+    scene.style.display = "block";
+  }
+});
+</script>
+
+</body>
+</html>
